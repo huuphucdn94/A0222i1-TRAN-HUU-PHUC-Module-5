@@ -1,0 +1,69 @@
+{
+  "facility": [
+    {
+      "id": 211,
+      "name": "phong vip",
+      "area": 3,
+      "cost": 3,
+      "max_people": 12,
+      "standard_room": "2 sao",
+      "description": "poor",
+      "pool_area": 10,
+      "number_of_floors": 3,
+      "rent_type": 2,
+      "facility_type": 2
+    },
+    {
+      "id": 222,
+      "name": "phong normal",
+      "area": "123123",
+      "cost": 3,
+      "max_people": 12,
+      "standard_room": "2 sao",
+      "description": "poor",
+      "pool_area": 10,
+      "number_of_floors": 3,
+      "rent_type": 2,
+      "facility_type": 2
+    },
+    {
+      "id": 32,
+      "name": "phong 2",
+      "area": 3,
+      "cost": 3,
+      "max_people": 12,
+      "standard_room": "2 sao",
+      "description": "poor",
+      "pool_area": 10,
+      "number_of_floors": 3,
+      "rent_type": 2,
+      "facility_type": 2
+    },
+    {
+      "id": 1,
+      "name": "phong normal",
+      "area": 3,
+      "cost": 3,
+      "max_people": 12,
+      "standard_room": "2 sao",
+      "description": "poor",
+      "pool_area": 10,
+      "number_of_floors": 3,
+      "rent_type": 2,
+      "facility_type": 2
+    },
+    {
+      "id": 223,
+      "name": "adwdawd",
+      "area": "1111",
+      "cost": "1111",
+      "max_people": "1111",
+      "standard_room": "1123",
+      "description": "123123",
+      "pool_area": "0123123",
+      "number_of_floors": "1123",
+      "rent_type": "0123123",
+      "facility_type": "0123123"
+    }
+  ]
+}

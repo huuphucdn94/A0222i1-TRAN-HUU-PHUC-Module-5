@@ -1,0 +1,51 @@
+<form [formGroup]="formUpdate" novalidate autocomplete="off" (ngSubmit)="saveUpdateForm()">
+  <div class="form-group">
+    <input formControlName="id" hidden name="id" formControlName="id" name="id">
+    <label>Name
+    <span style="color: red" *ngIf="formUpdate.controls.name.touched && formUpdate.controls.name.hasError('required')">
+      nhap gi do di
+    </span>
+      <span style="color: red" *ngIf="formUpdate.controls.name.touched && formUpdate.controls.name.hasError('pattern')">
+      khong chua so ban oi
+    </span></label>
+    <input type="text" class="form-control" id="name" placeholder="name input" formControlName="name" name="name">
+
+    <label>Area</label>
+    <input type="text" class="form-control" id="area" placeholder="area input" formControlName="area" name="area">
+
+    <label>Cost</label>
+    <input type="text" class="form-control" id="cost" placeholder="cost input" formControlName="cost" name="cost">
+
+    <label>Max People</label>
+    <input type="text" class="form-control" id="max-people" placeholder="max people input" formControlName="max_people"
+           name="max_people">
+
+    <label>Standard Room</label>
+    <input type="tel" class="form-control" id="room" placeholder="room input" formControlName="standard_room"
+           name="standard_room">
+
+    <label>Description</label>
+    <input type="text" class="form-control" id="description" placeholder="Description input"
+           formControlName="description" name="description">
+
+    <label>Pool Area</label>
+    <input type="text" class="form-control" id="Pool" placeholder="Pool input" formControlName="pool_area"
+           name="pool_area">
+
+    <label>Number Of Floors</label>
+    <input type="text" class="form-control" id="floor" placeholder="Rent input" formControlName="number_of_floors"
+           name="number_of_floors">
+
+    <label>Rent</label>
+    <input type="text" class="form-control" id="rent" placeholder="rent input" formControlName="rent_type"
+           name="rent_type">
+
+    <label>Facility Type</label>
+    <input type="text" class="form-control" id="Facility" placeholder="Facility Type input"
+           formControlName="facility_type" name="facility_type">
+
+  </div>
+  <div>
+    <button type="submit" [disabled]="formUpdate.invalid"> update</button>
+  </div>
+</form>

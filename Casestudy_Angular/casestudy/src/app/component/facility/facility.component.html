@@ -1,0 +1,85 @@
+<div class="row">
+  <div class="col-2">
+    <button class="btn btn-success" routerLink="create">
+      Create
+    </button>
+  </div>
+  <div class="col-2">
+    <button class="btn btn-success" (click)="RefeshPage()" >
+      Refresh
+    </button>
+  </div>
+  <div class="col-8">
+   <form [formGroup]="formSearch" (ngSubmit)="searchByNameAndRoom()">
+     <input formControlName="name" type="text" placeholder="Name Search">
+     <input formControlName="room" type="text" placeholder="Room Search">
+     <button type="submit">Search</button>
+   </form>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">No.</th>
+    <th scope="col">Name</th>
+    <th scope="col">Area</th>
+    <th scope="col">Cost</th>
+    <th scope="col">Max People</th>
+    <th scope="col">Standard Room</th>
+    <th scope="col">Description</th>
+    <th scope="col">Pool Area</th>
+    <th scope="col">Number Of Floors</th>
+    <th scope="col">Rent Type</th>
+    <th scope="col">Facility Type</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of facilities , let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.area}}</td>
+    <td>{{item.cost}}</td>
+    <td>{{item.max_people}}</td>
+    <td>{{item.standard_room}}</td>
+    <td>{{item.description}}</td>
+    <td>{{item.pool_area}}</td>
+    <td>{{item.number_of_floors}}</td>
+    <td>  {{item.rent_type}} </td>
+    <td>{{item.facility_type}}</td>
+    <td>
+      <!-- Button trigger modal -->
+      <button (click)="checkItemDelete(item)" type="button" class="btn btn-danger" data-bs-toggle="modal"
+              data-bs-target="#deleteModal">
+        delete
+      </button>
+      <button type="button" class="btn btn-primary" [routerLink]="['/list/edit',item.id]">
+        edit
+      </button>
+
+
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Delete facility with name {{this.facilitySelect.name}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="deleteThis(this.facilitySelect.id)" class="btn btn-primary">delete</button>
+      </div>
+    </div>
+  </div>
+</div>
