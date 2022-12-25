@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Color picker</h1>
+  <div class="output" [style.backgroundColor]="color"></div>
+  <br>
+  <button class="btn btn-primary" value="blue" (click)="changeColor($event.target)">Blue</button>
+  <button class="btn btn-danger" value="red" (click)="changeColor($event.target)">Red</button>
+  <button class="btn btn-success" value="green" (click)="changeColor($event.target)">Green</button>
+  <button class="btn btn-warning" value="orange" (click)="changeColor($event.target)">Orange</button>
+  <br><br>
+  <button class="btn btn-outline-dark" value="" (click)="changeColor($event.target)">Clear color</button>
+
+</div>

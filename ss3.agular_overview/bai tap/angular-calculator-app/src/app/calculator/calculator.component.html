@@ -1,0 +1,18 @@
+<h1>Calculator</h1>
+<input type="text" (change)="changeFirstNumber($event.target)">
+<select (change)="changeOperator($event.target)">
+  <option value="">Select</option>
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="x">x</option>
+  <option value=":">:</option>
+</select>
+<input type="text" (change)="changeSecondNumber($event.target)">
+<button (click)="calculate()">Result</button>
+<br>
+<div *ngIf="!calculator.operator">
+  <p>Please select operator</p>
+</div>
+<p>{{calculator.result}}</p>
+
+

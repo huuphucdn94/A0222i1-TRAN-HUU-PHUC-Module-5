@@ -1,0 +1,7 @@
+<h1>Countdown Timer</h1>
+<p>Countdown from {{initNumber}}</p>
+<button (click)="startCountdown()">Start</button>
+<button (click)="stopCountdown(countdown)" >Stop</button>
+<button (click)="resetCountdown()">Reset</button>
+<div *ngIf="countdown>=0">{{countdown}}</div>
+<div *ngIf="countdown<0">{{stopNumber}}</div>
