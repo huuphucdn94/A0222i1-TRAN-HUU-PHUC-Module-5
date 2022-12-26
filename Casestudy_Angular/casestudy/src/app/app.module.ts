@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FacilityComponent} from "./component/facility/facility.component";
 import { UpdateFacilityComponent } from './component/facility/update-facility/update-facility.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { CustomerComponent } from './component/customer/customer.component';
 
 // noinspection AngularInvalidImportedOrDeclaredSymbol
 @NgModule({
@@ -18,7 +19,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     NavbarComponent,
     FooterComponent,
     FacilityComponent,
-    UpdateFacilityComponent
+    UpdateFacilityComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
