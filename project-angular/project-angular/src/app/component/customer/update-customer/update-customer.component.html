@@ -1,0 +1,43 @@
+<form [formGroup]="formUpdate" novalidate autocomplete="off" (ngSubmit)="saveUpdateForm()">
+  <div class="form-group">
+    <input formControlName="id" hidden name="id" formControlName="id" name="id">
+    <label>Name
+      <span style="color: red" *ngIf="formUpdate.controls.id.touched && formUpdate.controls.id.hasError('required')">
+      nhap gi do di
+    </span>
+      <span style="color: red" *ngIf="formUpdate.controls.id.touched && formUpdate.controls.id.hasError('pattern')">
+      khong chua so ban oi
+    </span></label>
+    <input type="text" class="form-control" id="name" placeholder="name input" formControlName="name" name="name">
+
+    <label>ma khach hang</label>
+    <input type="text" class="form-control" id="area" placeholder="area input" formControlName="ma_khach_hang" name="ma_khach_hang">
+
+    <label>ngay mo so</label>
+    <input type="text" class="form-control" id="cost" placeholder="cost input" formControlName="ngay_mo_so" name="ngay_mo_so">
+
+    <label>thoi gian bat dau</label>
+    <input type="text" class="form-control" id="max-people" placeholder="Thoi_gian_bat_dau" formControlName="Thoi_gian_bat_dau"
+           name="Thoi_gian_bat_dau">
+
+    <label>ky han</label>
+    <input type="tel" class="form-control" id="room" placeholder="ky_han" formControlName="ky_han"
+           name="ky_han">
+
+    <label>so tien gui</label>
+    <input type="text" class="form-control" id="so_tien_gui" placeholder="so_tien_gui"
+           formControlName="so_tien_gui" name="so_tien_gui">
+
+    <label>Pool Area</label>
+    <input type="text" class="form-control" id="Pool" placeholder="lai_suat" formControlName="lai_suat"
+           name="lai_suat">
+
+    <label>Number Of Floors</label>
+    <input type="text" class="form-control" id="floor" placeholder="uu_dai" formControlName="uu_dai"
+           name="uu_dai">
+
+  </div>
+  <div>
+    <button type="submit" [disabled]="formUpdate.invalid"> update</button>
+  </div>
+</form>

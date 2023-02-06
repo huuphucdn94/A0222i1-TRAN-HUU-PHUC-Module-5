@@ -1,0 +1,26 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "tran huu phuc",
+      "ma_khach_hang": "123",
+      "ngay_mo_so": null,
+      "Thoi_gian_bat_dau": null,
+      "ky_han": null,
+      "so_tien_gui": null,
+      "lai_suat": null,
+      "uu_dai": null
+    },
+    {
+      "id": 2,
+      "name": "nguyen van b",
+      "ma_khach_hang": "345",
+      "ngay_mo_so": null,
+      "Thoi_gian_bat_dau": null,
+      "ky_han": null,
+      "so_tien_gui": null,
+      "lai_suat": null,
+      "uu_dai": null
+    }
+  ]
+}

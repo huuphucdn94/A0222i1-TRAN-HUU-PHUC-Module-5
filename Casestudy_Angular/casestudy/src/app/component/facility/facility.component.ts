@@ -22,6 +22,12 @@ export class FacilityComponent implements OnInit {
     // waiting json server tra result => value va gan vao bien local facility
     this.facilitiesService.findAll('', '').subscribe(value => {
       this.facilities = value;
+      //phan trang---------------------------------
+      this.config = {
+        itemsPerPage: 3,
+        currentPage: 1,
+        totalItems: this.facilities.length
+      };
     });
   }
 
@@ -36,15 +42,17 @@ export class FacilityComponent implements OnInit {
   deleteThis(id: number) {
     this.facilitiesService.deleteById(id).subscribe(value => {
       this.facilitySelect = {};
-      // document.getElementById("deleteModal").click();
+      document.getElementById("deleteModal").click();
       // this.ngOnInit();
       confirm("delete thanh cong")
+      this.ngOnInit();
       // @ts-ignore
-      window.location = "http://localhost:4200/list";
+      //   window.location = "http://localhost:4200/list";
     })
   }
 
 //form de search theo truong name va room
+  config: any;
   buildForm() {
     this.formSearch = new FormGroup({
       name: new FormControl(""),
@@ -57,10 +65,15 @@ export class FacilityComponent implements OnInit {
       this.facilities = value;
     })
   }
-
-  RefeshPage() {
-    this.facilitiesService.findAll("", "").subscribe(value => {
-      this.facilities = value;
-    })
+//re-fresh page
+//   RefeshPage() {
+//     console.log('refresh')
+//     this.facilitiesService.findAll("", "").subscribe(value => {
+//       this.facilities = value;
+//     })
+//   }
+  //ham phan trang-------------------------
+  pageChanged(event: number) {
+    this.config.currentPage = event;
   }
 }

@@ -1,0 +1,83 @@
+<div class="row">
+  <div class="col-2">
+    <button class="btn btn-success" routerLink="create">
+      Create
+    </button>
+  </div>
+  <div class="col-2">
+
+    <!--form de search-->
+  </div>
+  <div class="col-8">
+    <form [formGroup]="formSearch" (ngSubmit)="searchByIdAndName()">
+      <input formControlName="Id" type="number" placeholder="Id Search">
+      <input formControlName="name" type="text" placeholder="Name Search">
+      <button type="submit" class="btn-dark">Search</button>
+    </form>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">No.</th>
+    <th scope="col">Mã số sổ</th>
+    <th scope="col">Tên Khách Hàng</th>
+    <th scope="col">Mã khách hàng</th>
+    <th scope="col">ngày mở sổ</th>
+    <th scope="col">thời gian bắt đầu gửi</th>
+    <th scope="col">kì hạn</th>
+    <th scope="col">số tiền gửi</th>
+    <th scope="col">lãi suất</th>
+    <th scope="col">ưu đãi</th>
+    <th >Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of customers, let i = index  ">
+    <td>{{i + 1}}</td>
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.ma_khach_hang}}</td>
+    <td>{{item.ngay_mo_so}}</td>
+    <td>{{item.Thoi_gian_bat_dau}}</td>
+    <td>{{item.ky_han}}</td>
+    <td>{{item.so_tien_gui}}</td>
+    <td>{{item.lai_suat}}</td>
+    <td> {{item.uu_dai}} </td>
+    <td>
+      <!-- Button trigger modal -->
+      <button (click)="checkItemDelete(item)" type="button" class="btn btn-danger" data-bs-toggle="modal"
+              data-bs-target="#deleteModal">
+        delete
+      </button>
+      <button type="button" class="btn btn-primary" [routerLink]="['/list/edit',item.id]">
+        edit
+      </button>
+
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Need to confirm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Delete customer with name {{this.customerSelect.name}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="deleteThis(this.customerSelect.id)" class="btn btn-primary">delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+

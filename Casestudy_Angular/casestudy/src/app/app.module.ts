@@ -11,6 +11,7 @@ import {FacilityComponent} from "./component/facility/facility.component";
 import { UpdateFacilityComponent } from './component/facility/update-facility/update-facility.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { CustomerComponent } from './component/customer/customer.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 // noinspection AngularInvalidImportedOrDeclaredSymbol
 @NgModule({
@@ -28,6 +29,7 @@ import { CustomerComponent } from './component/customer/customer.component';
     RouterModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxPaginationModule,//thu vien phan trang
    ],
   providers: [],
   bootstrap: [AppComponent]
